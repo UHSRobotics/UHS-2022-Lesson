@@ -5,6 +5,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import frc.examples.EncoderDemo;
 import frc.examples.MotorControl;
 import frc.examples.SolenoidDemo;
 
@@ -23,6 +24,8 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     MotorControl.initControl();
+
+    EncoderDemo.initEncoder();
   }
 
   /** This function is called periodically during operator control. */
