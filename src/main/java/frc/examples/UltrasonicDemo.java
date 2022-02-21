@@ -26,7 +26,7 @@ public class UltrasonicDemo {
     
     public static void ultrasonicPeriodic() {
         double currentDistance = m_filter.calculate(m_ultrasonic.getValue()) * kValueToInches;
-        double currentSpeed = (kHoldDistance - currentDistance) * kP;
+        double currentSpeed = (currentDistance - kHoldDistance) * kP;
         m_robotDrive.arcadeDrive(currentSpeed, 0);
     }
 }
