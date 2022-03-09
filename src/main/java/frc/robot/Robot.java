@@ -4,10 +4,14 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
 import frc.examples.EncoderDemo;
+import frc.examples.GyroDrive;
 import frc.examples.MotorControl;
 import frc.examples.SolenoidDemo;
+import frc.examples.UltrasonicDemo;
+import frc.examples.JoystickDemo.JoystickDemo;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -24,7 +28,7 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     MotorControl.initControl();
-
+    GyroDrive.initGyro();
     EncoderDemo.initEncoder();
   }
 
@@ -35,5 +39,11 @@ public class Robot extends TimedRobot {
     MotorControl.setMotor();
     // SEE SOLENOID FILE FOR MORE
     SolenoidDemo.setSolenoid();
+    // SEE GYRODRIVE FILE FOR MORE
+    GyroDrive.gyroPeriodic();
+
+    UltrasonicDemo.ultraSonicPeriodic();
+
+    JoystickDemo.joystickPeriodic();
   }
 }
